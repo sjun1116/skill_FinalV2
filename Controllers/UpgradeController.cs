@@ -39,7 +39,6 @@ namespace DotnetCoreServer.Controllers
         {
 
             ResultBase result = new ResultBase();
-
             User user = this.userDao.GetUser(request.UserID);
             UpgradeData upgradeInfo = null;
             if("StatPoint".Equals(request.UpgradeType)){
@@ -137,6 +136,15 @@ namespace DotnetCoreServer.Controllers
 
             result.ResultCode = 1;
             result.Message = "Success";
+            result.le = user.Level;
+            result.cuE = user.Experience;
+            result.Mon = user.Money;
+            result.st = user.Str;
+            result.de = user.Dex;
+            result.co = user.Con;
+            result.iinn = user.Int;
+            result.staaaaaa = user.StatPoint;
+            result.EEEEmax = user.MaxExperience;
 
             return result;
 
