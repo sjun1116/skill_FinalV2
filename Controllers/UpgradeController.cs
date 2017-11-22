@@ -136,7 +136,9 @@ namespace DotnetCoreServer.Controllers
 
             result.ResultCode = 1;
             result.Message = "Success";
- 
+            result.user =request.UserID ;
+            result.uuser = user.UserID;
+            
             return result;
 
         }
