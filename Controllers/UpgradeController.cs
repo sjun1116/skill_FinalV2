@@ -34,7 +34,7 @@ namespace DotnetCoreServer.Controllers
         //}
 
         // POST Upgrade/Execute
-            [HttpPost("{id}")]
+        [HttpPost("{id}")]
         public ResultBase Execute(int id, [FromBody] UpgradeRequest request)
         {
             request.UserID = id;
@@ -131,14 +131,12 @@ namespace DotnetCoreServer.Controllers
 
             }
 
-
             this.userDao.UpdateUser(user);
+
 
             result.ResultCode = 1;
             result.Message = "Success";
-            result.user =request.UserID ;
-            result.uuser = user.UserID;
-            
+
             return result;
 
         }
