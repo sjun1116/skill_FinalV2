@@ -121,14 +121,14 @@ namespace DotnetCoreServer.Controllers
             else if ("MaxExperience".Equals(request.UpgradeType))
             {
 
-                user.Experience = request.stat;
+                user.MaxExperience = request.stat;
 
             }
 
             else if ("Money".Equals(request.UpgradeType))
             {
 
-                user.Experience = request.stat;
+                user.Money = request.stat;
 
             }
 
