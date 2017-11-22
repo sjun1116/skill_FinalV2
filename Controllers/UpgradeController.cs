@@ -34,10 +34,10 @@ namespace DotnetCoreServer.Controllers
         //}
 
         // POST Upgrade/Execute
-        [HttpPost]
-        public ResultBase Execute([FromBody] UpgradeRequest request)
+            [HttpPost("{id}")]
+        public ResultBase Execute(int id, [FromBody] UpgradeRequest request)
         {
-
+            request.UserID = id;
             ResultBase result = new ResultBase();
             User user = this.userDao.GetUser(request.UserID);
             UpgradeData upgradeInfo = null;
