@@ -33,7 +33,7 @@ namespace DotnetCoreServer.Controllers
         //    return result;
         //}
 
-        // POST Upgrade/Execute
+        // POST Upgrade/Execute/42
         [HttpPost("{id}")]
         public ResultBase Execute(long id, [FromBody] UpgradeRequest request)
         {
@@ -141,5 +141,23 @@ namespace DotnetCoreServer.Controllers
 
         }
 
+ 
+
+        // POST Upgrade/Execute
+        [HttpPost]
+        public ResultBase Execute([FromBody] User requestUser)
+        {
+            ResultBase result = new ResultBase();
+            User user = this.userDao.GetUser(requestUser.UserID);
+
+            this.userDao.UpdateUser(user);
+
+
+            result.ResultCode = 1;
+            result.Message = "Success";
+
+            return result;
+
+        }
     }
 }
